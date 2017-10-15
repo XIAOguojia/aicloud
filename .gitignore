@@ -1,0 +1,12 @@
+target/
+.settings/
+.classpath
+.project
+.mymetadata
+.svn/
+.myeclipse/
+.idea/
+*.iml
+*.iws
+*.ipr
+rebel.xml
