@@ -15,7 +15,7 @@ public class EurekaServer {
 
     private static Logger logger = LoggerFactory.getLogger(EurekaServer.class);
 
-    @GetMapping("/ver.1.0-SNAPSHOT")
+    @GetMapping("/ver.0.1.0-SNAPSHOT")
     public String version(){
         return "";
     }
