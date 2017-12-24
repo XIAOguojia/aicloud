@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: config.server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://Liuyis@bitbucket.org/Liuyis/aicloud.git
+          search-paths: /core/config
+          username: 860986808@qq.com
+          password: LIUYI1994
+      label: dev
+
+
+server:
+  port: 8085
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka/
+
+
+---
+spring:
+  application:
+    name: zuul
+  profiles: docker
+
+server:
+  port: ${AICLOUD_CORE_CLIENT_SERVICE_PORT}
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://${AICLOUD_CORE_DISCOVER_SERVICE_HOST}:${}
+
+
+
