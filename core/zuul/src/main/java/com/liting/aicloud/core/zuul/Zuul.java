@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableZuulProxy
 @RestController
 public class Zuul {
-    private static Logger logger = LoggerFactory.getLogger(Zuul.class);
+       private static Logger logger = LoggerFactory.getLogger(Zuul.class);
 
     @GetMapping("/ver.0.1.0-SNAPSHOT")
     public String version(){

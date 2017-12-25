@@ -7,12 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class web {
 
-    @Value("test")
+    @Value("${test}")
     private String config;
 
     @RequestMapping("/hello")
     public String hello(String name){
         System.out.println("hello: " + name);
+        System.out.println("config: " + config);
         return name;
     }
 
