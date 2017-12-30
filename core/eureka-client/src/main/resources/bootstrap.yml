@@ -5,8 +5,9 @@ spring:
     config:
       label: dev
       profile: dev
-      uri:  http://localhost:8085/
-      name: euraka-client
+      discovery:
+        enabled: true
+        service-id: config.server
 server:
   port: 8082
 

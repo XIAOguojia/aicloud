@@ -1,20 +1,18 @@
-package com.liting.aicloud.core.config;
+package com.liting.aicloud.common.logger;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Created by liuyi on 28/12/2017.
+ */
 @SpringBootApplication
-@RestController
-@EnableConfigServer
-@EnableDiscoveryClient
-public class ConfigServer {
-    private static Logger logger = LoggerFactory.getLogger(ConfigServer.class);
+public class App {
+
+    private static Logger logger = LoggerFactory.getLogger(App.class);
 
     @GetMapping("/ver.0.1.0-SNAPSHOT")
     public String version(){
@@ -22,12 +20,9 @@ public class ConfigServer {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(ConfigServer.class, args);
+        SpringApplication.run(App.class, args);
         logger.info("...............................................................");
-        logger.info("..................{} starts successfully", ConfigServer.class.getSimpleName());
+        logger.info("..................{} starts successfully", App.class.getSimpleName());
         logger.info("...............................................................");
     }
-
-
-
 }

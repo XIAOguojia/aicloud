@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class web {
 
-    @Value("${test}")
     private String config;
 
     @RequestMapping("/hello")
