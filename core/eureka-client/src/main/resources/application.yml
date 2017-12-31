@@ -1,3 +1,8 @@
-
-
-
+server:
+  port: 8082
+spring:
+  cloud:
+    consul:
+      port: 8500
+      discovery:
+        healthCheckInterval: 15s
