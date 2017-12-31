@@ -16,6 +16,7 @@
         <module>config-server</module>
         <module>server-zipkin</module>
         <module>server-turbine</module>
+        <module>server-config</module>
     </modules>
 
     <properties>
