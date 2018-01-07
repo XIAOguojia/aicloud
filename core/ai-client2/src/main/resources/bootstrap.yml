@@ -1,0 +1,28 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: ai-client2
+  cloud:
+
+    consul:
+      port: 8500
+      discovery:
+        healthCheckInterval: 15s
+        tags: ai-service
+
+    config:
+      label: master
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: server-config
+
+  sleuth:
+    sampler:
+      percentage: 1
+  zipkin:
+    base-url: http://localhost:9002
+
+

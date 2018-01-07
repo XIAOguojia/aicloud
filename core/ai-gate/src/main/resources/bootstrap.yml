@@ -1,0 +1,27 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: ai-gate
+  cloud:
+
+    consul:
+      port: 8500
+      discovery:
+        healthCheckInterval: 15s
+        tags: ai-gate
+
+    config:
+      label: master
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: server-config
+  sleuth:
+    sampler:
+      percentage: 1
+  zipkin:
+    base-url: http://localhost:9002
+
+

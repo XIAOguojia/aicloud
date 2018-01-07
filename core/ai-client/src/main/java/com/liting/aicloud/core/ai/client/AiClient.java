@@ -1,25 +1,33 @@
-package com.liting.aicloud.core.server.zipkin;
+package com.liting.aicloud.core.ai.client;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import zipkin.server.EnableZipkinServer;
 
 /**
- * Created by liuyi on 28/12/2017.
+ * Created by liuyis on 01/01/2018.
  */
-@SpringCloudApplication
-@EnableZipkinServer
 @Slf4j
-public class ServerZipkin {
+@SpringCloudApplication
+@RestController
+public class AiClient {
+
+    @Value("${test}")
+    private String test;
+
+    @GetMapping("/test")
+    public String test() {
+        return test;
+    }
 
     public static void main(String[] args) {
-        SpringApplication.run(ServerZipkin.class, args);
+        SpringApplication.run(AiClient.class, args);
         log.info("...............................................................");
-        log.info("..................{} starts successfully", ServerZipkin.class.getSimpleName());
+        log.info("..................{} starts successfully", AiClient.class.getSimpleName());
         log.info("...............................................................");
+        
     }
 }
