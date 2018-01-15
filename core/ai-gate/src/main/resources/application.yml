@@ -1,9 +1,0 @@
-zuul:
-  routes:
-    api-client:
-      path: /api/client/**
-      serviceId: ai-client
-    api-client2:
-          path: /api/client2/**
-          serviceId: ai-client2
-
