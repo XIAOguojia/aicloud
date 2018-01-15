@@ -1,0 +1,21 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: server-turbine
+
+  cloud:
+
+    consul:
+      port: 8500
+      discovery:
+        healthCheckInterval: 15s
+        tags: server
+
+    config:
+      label: master
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: server-config
+      fail-fast: true

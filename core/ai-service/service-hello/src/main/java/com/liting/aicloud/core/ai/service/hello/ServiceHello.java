@@ -1,6 +1,6 @@
-package com.liting.aicloud.core.ai.client;
+package com.liting.aicloud.core.ai.service.hello;
 
-import com.liting.aicloud.core.ai.client.sao.ClientSAO;
+import com.liting.aicloud.core.ai.service.hello.sao.ClientSAO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * Created by liuyis on 01/01/2018.
+ * Created by liuyis on 07/01/2018.
  */
 @Slf4j
 @SpringCloudApplication
 @RestController
 @EnableFeignClients
-public class AiClient2 {
+public class ServiceHello {
 
     @Autowired
     private ClientSAO clientSAO;
@@ -30,9 +30,9 @@ public class AiClient2 {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(AiClient2.class, args);
+        SpringApplication.run(ServiceHello.class, args);
         log.info("...............................................................");
-        log.info("..................{} starts successfully", AiClient2.class.getSimpleName());
+        log.info("..................{} starts successfully", ServiceHello.class.getSimpleName());
         log.info("...............................................................");
     }
 

@@ -1,0 +1,29 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: server-config
+  cloud:
+
+    consul:
+      port: 8500
+      discovery:
+        healthCheckInterval: 15s
+        tags: server
+
+    config:
+#      label: master
+      profile: dev
+      server:
+#        git:
+#          uri: https://github.com/Liuyis/spring-cloud-config
+        native:
+          search-locations: classpath:/config
+
+---
+spring:
+  profiles: stg
+
+---
+spring:
+  profiles: prd

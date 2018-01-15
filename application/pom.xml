@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.liting.aicloud</groupId>
-    <artifactId>core</artifactId>
+    <artifactId>application</artifactId>
     <packaging>pom</packaging>
     <version>0.2.1</version>
+
     <modules>
-        <module>ai-module</module>
-        <module>ai-service</module>
+        <module>ai-gate</module>
     </modules>
 
     <properties>
