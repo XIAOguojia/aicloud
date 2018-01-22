@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 /**
  * Created by liuyis on 01/01/2018.
  */
-@FeignClient("ai-client")
+@FeignClient("module-hello")
 public interface ClientSAO {
 
-    @GetMapping(value = "/test")
+    @GetMapping(value = "/hello")
     String testSAO();
 }

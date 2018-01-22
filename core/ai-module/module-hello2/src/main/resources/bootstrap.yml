@@ -1,0 +1,46 @@
+server:
+  port: 8072
+
+spring:
+  application:
+    name: module-hello
+
+  cloud:
+    stream:
+      default-binder: kafka
+      kafka:
+        binder:
+          brokers: localhost:9092
+          zkNodes: localhost:2181
+    consul:
+      port: 8500
+      discovery:
+        healthCheckInterval: 15s
+        tags: ai-module
+
+    config:
+      label: master
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: server-config
+      fail-fast: true
+
+  sleuth:
+    sampler:
+      percentage: 1
+  zipkin:
+    base-url: http://localhost:9002
+
+---
+#测试环境
+spring:
+  profiles: stg
+
+---
+#生产环境
+spring:
+  profiles: prd
+
+
+

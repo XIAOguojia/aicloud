@@ -1,0 +1,38 @@
+server:
+  port: 9003
+spring:
+  application:
+    name: server-admin
+
+  boot:
+    admin:
+      turbine:
+        url: http://localhost:9010/turbine.stream
+        clusters: default
+        location: server-turbine
+  cloud:
+
+    consul:
+      port: 8500
+      discovery:
+        healthCheckInterval: 15s
+        tags: server
+
+    config:
+#      label: master
+      profile: dev
+      server:
+#        git:
+#          uri: https://github.com/Liuyis/spring-cloud-config
+        native:
+          search-locations: classpath:/config
+
+---
+#测试环境
+spring:
+  profiles: stg
+
+---
+#生产环境
+spring:
+  profiles: prd

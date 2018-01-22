@@ -21,9 +21,11 @@ spring:
           search-locations: classpath:/config
 
 ---
+#测试环境
 spring:
   profiles: stg
 
 ---
+#生产环境
 spring:
   profiles: prd

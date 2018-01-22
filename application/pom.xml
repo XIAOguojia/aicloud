@@ -16,6 +16,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
+        <aicloud.common.version>0.2.1</aicloud.common.version>
 
         <!--plugin version-->
         <docker.plugin.version>1.0.0</docker.plugin.version>
@@ -29,6 +30,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.liting.aicloud</groupId>
+            <artifactId>common</artifactId>
+            <version>${aicloud.common.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

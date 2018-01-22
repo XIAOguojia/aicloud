@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>core</artifactId>
+        <groupId>com.liting.aicloud</groupId>
+        <version>0.2.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>db-bridge-core</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.thrift</groupId>
+            <artifactId>libthrift</artifactId>
+            <version>0.11.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.thrift.tools</groupId>
+                <artifactId>maven-thrift-plugin</artifactId>
+                <version>0.1.11</version>
+                <configuration>
+                    <thriftExecutable>C:\MySoft\thrift\thrift-0.9.3.exe</thriftExecutable>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>thrift-sources</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>thrift-test-sources</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--<plugin>-->
+            <!--<artifactId>maven-antrun-plugin</artifactId>-->
+            <!--<executions>-->
+            <!--<execution>-->
+            <!--<id>compile-thrift</id>-->
+            <!--<phase>generate-sources</phase>-->
+            <!--<configuration>-->
+            <!--<tasks>-->
+            <!--<mkdir dir="src/main/java/com/liting/aicloud/core/database/bridge/generate"/>-->
+            <!--<path id="thrift.path">-->
+            <!--<fileset dir="${project.basedir}/src/main/thrift">-->
+            <!--<include name="**/tutorial.thrift"/>-->
+            <!--</fileset>-->
+            <!--</path>-->
+            <!--<pathconvert pathsep=" " property="thrift.files"-->
+            <!--refid="thrift.path"/>-->
+            <!--<exec executable="C:\MySoft\thrift\thrift-0.11.0.exe">-->
+            <!--<arg value="-r &#45;&#45;gen"/>-->
+            <!--<arg value="java"/>-->
+            <!--<arg value="-o"/>-->
+            <!--<arg value="src/main/java/com/liting/aicloud/core/database/bridge/generate"/>-->
+            <!--<arg line="${thrift.files}"/>-->
+            <!--</exec>-->
+            <!--</tasks>-->
+            <!--<sourceRoot>src/main/thrift</sourceRoot>-->
+            <!--</configuration>-->
+            <!--<goals>-->
+            <!--<goal>run</goal>-->
+            <!--</goals>-->
+            <!--</execution>-->
+            <!--</executions>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+            <!--<artifactId>maven-clean-plugin</artifactId>-->
+            <!--<configuration>-->
+            <!--<verbose>true</verbose>-->
+            <!--<filesets>-->
+            <!--<fileset>-->
+            <!--<directory>${project.basedir}/src/main/java/com/liting/aicloud/core/database/bridge/generate</directory>-->
+            <!--</fileset>-->
+            <!--</filesets>-->
+            <!--</configuration>-->
+            <!--</plugin>-->
+        </plugins>
+    </build>
+
+</project>

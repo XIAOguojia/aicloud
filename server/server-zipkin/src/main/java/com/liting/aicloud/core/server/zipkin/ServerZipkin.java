@@ -19,8 +19,7 @@ import zipkin.server.EnableZipkinServer;
 public class ServerZipkin implements CommandLineRunner{
     @Value("${spring.application.name}")
     private String app;
-    @Value("${application.version}")
-    private String version;
+    private String version = "1.0.0";
 
     public static void main(String[] args) {
         SpringApplication.run(ServerZipkin.class, args);
@@ -29,7 +28,7 @@ public class ServerZipkin implements CommandLineRunner{
     @Override
     public void run(String... strings) throws Exception {
         log.info("...............................................................");
-        log.info("App: [{}] starts successfully", app);
+        log.info("App: [{}] is up !!", app);
         log.info("Version: {}", version);
         log.info("...............................................................");
     }

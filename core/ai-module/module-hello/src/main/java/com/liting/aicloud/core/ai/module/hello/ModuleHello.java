@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,11 +19,11 @@ public class ModuleHello implements CommandLineRunner{
 
     @Value("${spring.application.name}")
     private String app;
-    @Value("${application.version}")
-    private String version;
+    private String version = "1.0.0";
 
     @GetMapping("/hello")
     public String test() {
+        log.info("hello1");
         return app;
     }
 

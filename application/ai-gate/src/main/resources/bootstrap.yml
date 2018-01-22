@@ -25,4 +25,14 @@ spring:
   zipkin:
     base-url: http://localhost:9002
 
+---
+#测试环境
+spring:
+  profiles: stg
+
+---
+#生产环境
+spring:
+  profiles: prd
+
 

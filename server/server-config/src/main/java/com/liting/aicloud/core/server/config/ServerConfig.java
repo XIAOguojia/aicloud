@@ -6,6 +6,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.config.server.EnableConfigServer;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Created by liuyi on 31/12/2017.
@@ -16,7 +18,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 public class ServerConfig implements CommandLineRunner{
     @Value("${spring.application.name}")
     private String app;
-    private String version;
+    private String version = "1.0.0";
 
     public static void main(String[] args) {
         SpringApplication.run(ServerConfig.class, args);
@@ -25,7 +27,7 @@ public class ServerConfig implements CommandLineRunner{
     @Override
     public void run(String... strings) throws Exception {
         log.info("...............................................................");
-        log.info("App: [{}] starts successfully", app);
+        log.info("App: [{}] is up !!", app);
         log.info("Version: {}", version);
         log.info("...............................................................");
     }

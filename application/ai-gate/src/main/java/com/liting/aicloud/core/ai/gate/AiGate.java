@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 /**
@@ -13,11 +14,11 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 @Slf4j
 @SpringCloudApplication
 @EnableZuulProxy
+@EnableHystrix
 public class AiGate implements CommandLineRunner{
     @Value("${spring.application.name}")
     private String app;
-    @Value("${application.version}")
-    private String version;
+    private String version = "1.0.0";
 
     public static void main(String[] args) {
         SpringApplication.run(AiGate.class, args);

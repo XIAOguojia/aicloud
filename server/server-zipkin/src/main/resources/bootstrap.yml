@@ -20,3 +20,13 @@ spring:
         service-id: server-config
       fail-fast: true
 
+---
+# 测试环境
+spring:
+  profiles: stg
+
+---
+# 生产环境
+spring:
+  profiles: prd
+
